@@ -20,3 +20,7 @@ git remote add origin https://github.com/fernandogh7508/IAG344.git
 git push -u origin main
 git push -u origin master
 ```
+
+
+porwesherll
+set-execurionpolicy unrestriced
