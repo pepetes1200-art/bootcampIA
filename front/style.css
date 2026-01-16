@@ -1,0 +1,35 @@
+ /* estilo para toda la */
+ *{
+    margin: 0;
+    padding: 0;
+ }
+ 
+ 
+ /* estilo header*/
+
+ .header{
+     background: #010610;/* color de fondo  en hexadecimal */
+     color:rgb(237, 240, 240);/* color letra*/
+     padding: 16px 24px;/*espacion internos */
+     display: flex;/*logo pixeles */
+     align-items: center;/* elemetos en la fila */
+    justify-content: space-between;
+ }
+ /* estilo titutlo web*/
+ .nombre{
+    font-size: 22px;/* tamaño en pixeles*/
+ }
+/*  enlaces del menu */
+.nav-link{
+    color: white;
+    text-decoration: none;
+    margin-left: 12px;/* espacios entre links*/
+    fill-opacity: 0.85;/* color un poco mas suave */
+}
+.nav-link:hover{
+    opacity: 1;
+    text-decoration:underline;
+    color: aquamarine;
+    background-color: rgb(44, 22, 6);
+    border-radius: 5px;
+}

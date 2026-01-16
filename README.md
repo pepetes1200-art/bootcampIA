@@ -24,3 +24,4 @@ git push -u origin master
 
 porwesherll
 set-execurionpolicy unrestriced
+# desative entorono virtual 
