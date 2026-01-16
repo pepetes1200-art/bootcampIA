@@ -35,3 +35,4 @@ def process_excel(path):
         ws[f"C{row}"].value
         )
         
+        
