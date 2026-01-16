@@ -25,3 +25,14 @@ git push -u origin master
 porwesherll
 set-execurionpolicy unrestriced
 # desative entorono virtual 
+"desactivate"
+# activar entorno 
+" env3.13.5/scripts/activate
+# comando cmd
+|coamndo |descripciones|
+|-|-|
+-|`cd`|cambios  de directorio
+|`dir` |listar
+python.exe-m pip istall --upgrande
+pip install pytest
+pi list
