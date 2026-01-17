@@ -34,5 +34,23 @@ def process_excel(path):
         ws[f"B{row}"].value,
         ws[f"C{row}"].value
         )
+        # guarde los cambios  en el mismo  archivo 
+        wb.save(path)
+        
+def process_excel_safe(path):
+    try:
+        process_excel(path)
+        return True,"archivo procesado correctamente"
+    except PermissionError:
+        return(
+            False,
+            "el archivo excel esta abierto.\n"
+            "porfavor, cierrelo e intente nuevamente."
+            )
+    except KeyError:
+        return False, "hoja'datos'no encontrada"
+    except Exception as e:
+        return False;f"error inesperado: {srt(e)}"
+    
         
         
