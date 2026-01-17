@@ -40,6 +40,7 @@ def process_excel(path):
 def process_excel_safe(path):
     try:
         process_excel(path)
+        print(path)
         return True,"archivo procesado correctamente"
     except PermissionError:
         return(
