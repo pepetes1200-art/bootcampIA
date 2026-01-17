@@ -13,3 +13,13 @@
     max-width: :20%; de esta forma reduzco el tamaña de la imagen
 
 } */
+
+.progress{
+    background-color: rgba(5, 3, 3, 0.2);
+
+}
+/* cambio de color*/
+.text-primary{
+     color: rgb(39, 123, 187) !important;
+     
+}
