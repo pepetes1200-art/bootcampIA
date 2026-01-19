@@ -1,10 +1,10 @@
-# processor.py
-# Lógica de negocio: operaciones sobre Excel
 import re
 from openpyxl import load_workbook
-
-
-
+#========================================
+# funcion celan_id
+#  PUNTO elimina caracteres no numericos de un documento
+#"cc75.88.56" = "758856"
+# =======================================
 def clean_id(value):
     # elimina carateres no numeros de un docummento
     if value is None:
@@ -22,7 +22,6 @@ def merge_name (name, lastname):
     return f"{name} {lastname}".strip()
 
 def process_excel(path):
-    print(path)
     # Acceso ala hoja de llamada"datos"
     wb= load_workbook(path)
     ws = wb["Datos"]
@@ -36,7 +35,7 @@ def process_excel(path):
         ws[f"C{row}"].value
         )
         # guarde los cambios  en el mismo  archivo 
-        wb.save(path)
+        wb.save(".xlsx")
         
 def process_excel_safe(path):
     try:
@@ -54,21 +53,3 @@ def process_excel_safe(path):
     except Exception as e:
         return False;f"error inesperado: {srt(e)}"
     
-    
-def ejecutar_accion(instruccion):
-    # Abre el archivo de ejemplo
-    wb = load_workbook()
-    ws = wb.active
-
-    if instruccion["action"] == "clean_id":
-        col = instruccion["column"]
-        for fila in range(2, ws.max_row + 1):
-            ws[f"{col}{fila}"] = ''.join(filter(str.isdigit, str(ws[f"{col}{fila}"].value)))
-
-    elif instruccion["action"] == "merge_name":
-        for fila in range(2, ws.max_row + 1):
-            nombre = ws["A" + str(fila)].value or ""
-            apellido = ws["B" + str(fila)].value or ""
-            ws["C" + str(fila)] = f"{nombre} {apellido}".strip()
-
-    wb.save()

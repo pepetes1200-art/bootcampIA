@@ -2,6 +2,7 @@
 # Simula una IA básica usando reglas y expresiones regulares
 
 import re
+from processor import process_excel 
 
 
 def interpretar_texto(texto):
