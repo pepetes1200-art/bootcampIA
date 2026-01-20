@@ -1,5 +1,5 @@
 /*  */
-*{font-family: 'montserrat','sans-serif;'}
+*{font-family: 'Montserrat','sans-serif'}
 
 
 
@@ -15,11 +15,11 @@
 } */
 
 .progress{
-    background-color: rgba(5, 3, 3, 0.2);
+    background-color: rgba(255, 255, 255, 0.2)!important;
 
 }
 /* cambio de color*/
 .text-primary{
-     color: rgb(39, 123, 187) !important;
+     color: rgb(196, 197, 197) !important;
      
 }
