@@ -23,3 +23,12 @@
      color: rgb(196, 197, 197) !important;
      
 }
+.card{
+    transition: trasnform 0.3s ease, box.shadow 0.3s ease;
+
+}
+.card:hover{
+    transform: translateY(-15px);
+    box-shadow: 0 10px 20px rgba(red, green, blue, alpha);
+}
+
