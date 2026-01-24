@@ -35,7 +35,7 @@
         input[type="text"]{
             width: 100%;
             padding: 10px;
-            border-radius: 1px;
+            border-radius: 10px;
             outline: none;
 
         }
@@ -46,28 +46,28 @@
 
         <H2>🤖 chatbot</H2>
         <div id="messages"></div>
-        <from id="chatfrom">
-           <input type="text"id= "userInpt"palceholder="escribe tu mensaje.."autocomplete="off">
-        </from>
+        <form id="chatForm">
+           <input type="text" id="userInput" placeholder="escribe tu mensaje.." autocomplete="off">
+        </form>
     </div>
     <script>
-        const from=document.getElementById("chatform");
-        const input= document.getElementById("userinput");
+        const form=document.getElementById("chatForm");
+        const input= document.getElementById("userInput");
         const messages=document.getElementById("messages");
-        form.addEventlistener("submit",async (e)=>{
+        form.addEventListener("submit",async (e)=>{
             e.preventDefault();
             const text= input.value.trim();
             if(!text)return;
             messages.innerHTML+=`<div class="msg user">tu:${text}</div>`;
             input.value="";
-            const response =await fetch("/chat",{
+            const response = await fetch("/chat",{
                 method:"POST",
-                headers:{"content-types":"application/x-www-form.urlencoded"},
-                body:`message={$encodeURICoponet(text)}`
+                headers:{"Content-Type":"application/x-www-form-urlencoded"},
+                body:`message=${encodeURIComponent(text)}`
 
             })
             const data = await response.json();
-            messages.innerHTML+=`<div class="msg user">tu:${text}</div>`;
+            messages.innerHTML+=`<div class="msg bot">bot:${data.response}</div>`;
             messages.scrollTop=messages.scrollHeight;
 
             
