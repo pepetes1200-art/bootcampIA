@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>chatbot intelegiente </title>
+    <style>
+        body{
+            font-family:  Arial, Helvetica, sans-serif;
+            background: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        #chatbot{
+            background: white;
+            width: 400px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            
+        }
+        #messages{
+            flex-grow: 1;
+            overflow-y: auto;
+            margin-bottom: 15px;
+
+        }
+        .msg{margin: 8px 0;}
+        .user {text-align: right;color: blue;}
+        .bot {text-align: left;color:green ;}
+        input[type="text"]{
+            width: 100%;
+            padding: 10px;
+            border-radius: 1px;
+            outline: none;
+
+        }
+    </style>
+</head>
+<body>
+    <div id="chatbot">
+
+        <H2>🤖 chatbot</H2>
+        <div id="messages"></div>
+        <from id="chatfrom">
+           <input type="text"id= "userInpt"palceholder="escribe tu mensaje.."autocomplete="off">
+        </from>
+    </div>
+    <script>
+        const from=document.getElementById("chatform");
+        const input= document.getElementById("userinput");
+        const messages=document.getElementById("messages");
+        form.addEventlistener("submit",async (e)=>{
+            e.preventDefault();
+            const text= input.value.trim();
+            if(!text)return;
+            messages.innerHTML+=`<div class="msg user">tu:${text}</div>`;
+            input.value="";
+            const response =await fetch("/chat",{
+                method:"POST",
+                headers:{"content-types":"application/x-www-form.urlencoded"},
+                body:`message={$encodeURICoponet(text)}`
+
+            })
+            const data = await response.json();
+            messages.innerHTML+=`<div class="msg user">tu:${text}</div>`;
+            messages.scrollTop=messages.scrollHeight;
+
+            
+            
+        })
+    </script>
+         
+</body>
+</html>
